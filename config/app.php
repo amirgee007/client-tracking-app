@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Client Tracking App'),
+    'name' => env('APP_NAME', 'Klanten binnen'),
 
     /*
     |--------------------------------------------------------------------------

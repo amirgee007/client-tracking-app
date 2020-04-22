@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card text-center">
                 <div class="card-header">
-                    Total Clients
+                    Nu binnen
                 </div>
                 <div class="card-body">
                     <h1 class="card-title" style="font-size: 7.25rem; margin-top: 15px; margin-bottom: 15px;"><span id="currentCounter">{{$counter->counter}}</span></h1>

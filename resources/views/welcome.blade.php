@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Client Tracking App</title>
+        <title>Klanten binnen</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -81,18 +81,18 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/') }}">Live</a>
-                        <a href="{{ route('show') }}">Show</a>
+                        <a href="{{ route('show') }}">Toon</a>
                         <a href="{{ url('/home') }}">Admin</a>
                     @else
                             <a href="{{ url('/') }}">Live</a>
-                            <a href="{{ route('show') }}">Show</a>
+                            <a href="{{ route('show') }}">Toon</a>
                             <a href="{{ route('login') }}">Login</a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
-                <h3> Client Tracking App </h3>
+                <h3> Klanten binnen </h3>
                 <small>
                     <a id="refreshBtn" style="color: red" href="javascript:void(0)" title="Refresh Now"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                     <span id="lastRefresh">Last refresh at {{now()}}</span>

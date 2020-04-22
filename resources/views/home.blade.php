@@ -12,12 +12,12 @@
                             @csrf
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">Counter Reset to</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">Reset aantal naar</label>
 
                                 <div class="col-md-8">
                                     <input id="counter" type="number" class="form-control{{ $errors->has('counter') ? ' is-invalid' : '' }}" name="counter" value="0" min="0" required autofocus>
 
-                                    <small>*If there are already some people in the store use that.</small>
+                                    <small>*Wordt direct aangepast.</small>
                                 </div>
 
                             </div>
