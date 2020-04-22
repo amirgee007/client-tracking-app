@@ -1,0 +1,10 @@
+.DS_Store
+/vendor
+/node_modules
+.env
+.idea
+/documentation
+composer.lock
+
+
+git remote add origin https://github.com/com:amirgee007/client-tracking-app.git
