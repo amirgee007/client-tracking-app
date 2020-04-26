@@ -5,13 +5,37 @@ namespace App\Http\Controllers;
 use App\Models\Counter;
 use Illuminate\Http\Request;
 
-class CounterController extends Controller
+class ClientsController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except('show');
+    }
 
-    public function welcome(){
 
+    public function show(){
+
+        #no need any AUTH here
         $counter = Counter::first();
-        return view('welcome' ,compact('counter'));
+        return view('show' ,compact('counter'));
+    }
+
+    public function home()
+    {
+        $user = auth()->user();
+        $counter = Counter::first();
+
+        if($user->role == 'admin'){
+            return view('home' ,compact('counter'));
+        }
+        else{
+            return view('live' ,compact('counter'));
+        }
     }
 
     public function updateCounter(Request $request) {
@@ -53,12 +77,6 @@ class CounterController extends Controller
         }
     }
 
-    public function show(){
-
-        $counter = Counter::first();
-        return view('show' ,compact('counter'));
-
-    }
 
     public function resetCounter(Request $request){
 

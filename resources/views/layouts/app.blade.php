@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Klanten binnen') }}</title>
+    <title>{{ config('app.name', __('client.app_name')) }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    @yield('styles')
 
 </head>
 <body>
@@ -36,19 +38,14 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
+                    <ul class="navbar-nav mr-auto"> </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/') }}">Live</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('show') }}">Toon</a>
+                                <a class="nav-link" href="{{ url('/home') }}">{{ __('client.live')}}</a>
                             </li>
 
                             <li class="nav-item">
@@ -56,15 +53,15 @@
                             </li>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
 
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ title_case(Auth::user()->name) }} <span class="caret"></span>
+                                </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                    <a class="dropdown-item" href="{{ url('/') }}"> Live </a>
-                                    <a class="dropdown-item" href="{{ route('show') }}"> Toon </a>
+                                    <a class="dropdown-item" href="{{ url('/home') }}"> {{ __('client.live')}} </a>
+                                    <a class="dropdown-item" href="{{ route('show') }}"> {{ __('client.show')}} </a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

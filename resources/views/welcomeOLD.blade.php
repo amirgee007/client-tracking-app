@@ -142,7 +142,6 @@
                     success: function (responseHtml) {
                         $('#currentCounter').text(responseHtml.counter);
                         $('#lastRefresh').text(responseHtml.message);
-                        //currentCounter
                     }
                 });
             }

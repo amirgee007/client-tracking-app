@@ -12,16 +12,15 @@
 */
 
 
-Route::get('/', 'CounterController@welcome')->name('welcome');
+Route::get('/', 'ClientsController@show')->name('show');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'ClientsController@home')->name('home');
 
-Route::post('/updateCounter', 'CounterController@updateCounter')->name('updateCounter');
-Route::get('/getLatestCount', 'CounterController@getLatestCount')->name('getLatestCount');
-Route::post('/resetCounter', 'CounterController@resetCounter')->name('resetCounter');
 
-Route::get('/show', 'CounterController@show')->name('show');
+Route::post('/updateCounter', 'ClientsController@updateCounter')->name('updateCounter');
+Route::get('/getLatestCount', 'ClientsController@getLatestCount')->name('getLatestCount');
+Route::post('/resetCounter', 'ClientsController@resetCounter')->name('resetCounter');
 
 
