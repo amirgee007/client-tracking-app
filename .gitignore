@@ -5,6 +5,7 @@
 .idea
 /documentation
 composer.lock
+/public/phpmyadmin
 
 
 git remote add origin https://github.com/com:amirgee007/client-tracking-app.git
